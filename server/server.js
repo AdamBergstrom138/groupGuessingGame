@@ -13,7 +13,7 @@ let player1Win = '';
 let player2Win = '';
 let player3Win = '';
 let player4Win = '';
-let playerWinObject = {
+let playerOutcomeObject = {
   player1Win,
   player2Win,
   player3Win,
@@ -31,29 +31,49 @@ function checkPlayerNumber(){
   for(player of player1Array){
     if(Number(player) === generateAnswer){
       console.log('got it1')
-      clearPlayers();
-      playerWinObject.player1Win = 'Player 1 Wins!'
+      
+      playerOutcomeObject.player1Win = 'win'
+    } else if(Number(player) > generateAnswer){
+      playerOutcomeObject.player1Win = 'higher'
+    } else if(Number(player) < generateAnswer){
+      playerOutcomeObject.player1Win = 'lower'
     }
   }
   for(player of player2Array){
     if(Number(player) === generateAnswer){
       console.log('got it2')
-      clearPlayers();
-      playerWinObject.player2Win = 'Player 2 Wins!'
+      
+      playerOutcomeObject.player2Win = 'win'
+    } else if(Number(player) > generateAnswer){
+      playerOutcomeObject.player2Win = 'higher'
+
+    } else if(Number(player) < generateAnswer){
+      playerOutcomeObject.player2Win = 'lower'
+      
     }
   }
   for(player of player3Array){
     if(Number(player) === generateAnswer){
       console.log('got it3')
-      clearPlayers();
-      playerWinObject.player3Win = 'Player 3 Wins!'
+      
+      playerOutcomeObject.player3Win = 'win'
+    } else if(Number(player) > generateAnswer){
+      playerOutcomeObject.player3Win = 'higher'
+
+    } else if(Number(player) < generateAnswer){
+      playerOutcomeObject.player3Win = 'lower'
+      
     }
   }
   for(player of player4Array){
     if(Number(player) === generateAnswer){
       console.log('got it4')
-      clearPlayers();
-      playerWinObject.player4Win = 'Player 4 Wins!'
+      
+      playerOutcomeObject.player4Win = 'win'
+    } else if(Number(player) > generateAnswer){
+      playerOutcomeObject.player4Win = 'higher'
+    } else if(Number(player) < generateAnswer){
+      playerOutcomeObject.player4Win = 'lower'
     }
   }
 }
@@ -88,6 +108,14 @@ app.get('/history4', (req, res) => {
 app.listen(PORT, () => {
   console.log ('Server is running on port', PORT)
 })
-app.get('/win1', (req, res) => {
-  res.send()
+app.get('/outcome', (req, res) => {
+  res.send(playerOutcomeObject)
+})
+app.post('/restart', (req, res) => {
+  if(req.body){
+    clearPlayers();
+    generateAnswer = randomNumber(1, 25);
+    console.log(generateAnswer);
+  }
+  res.sendStatus(201);
 })

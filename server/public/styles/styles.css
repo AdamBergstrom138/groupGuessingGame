@@ -1,0 +1,14 @@
+th, td, input, .history {
+    width: 250px;
+    margin: auto;
+}
+
+table, thead, tr, td, th, .history {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.history {
+    display: inline-block;
+    margin: 0;
+}

@@ -19,10 +19,25 @@
       <input type="number" id="player3" placeholder="player3 input">
       <input type="number" id="player4" placeholder="player4 input">
       <button id="submitButton">Submit</button>
+      <button id="restartButton">Restart</button>
     </div>
-    <div>Player 1 History <span id="player1History"></span></div>
-    <div>Player 2 History <span id="player2History"></span></div>
-    <div>Player 3 History <span id="player3History"></span></div>
-    <div>Player 4 History <span id="player4History"></span></div>
+    <table>
+      <thead>
+        <th>Player 1</th>
+        <th>Player 2</th>
+        <th>Player 3</th>
+        <th>Player 4</th>
+      </thead>
+      <tr>
+        <td id="highOrLowPlayer1"></td>
+        <td id="highOrLowPlayer2"></td>
+        <td id="highOrLowPlayer3"></td>
+        <td id="highOrLowPlayer4"></td>
+      </tr>
+    </table>
+    <div class="history">Player 1 History <span id="player1History"></span></div>
+    <div class="history">Player 2 History <span id="player2History"></span></div>
+    <div class="history">Player 3 History <span id="player3History"></span></div>
+    <div class="history">Player 4 History <span id="player4History"></span></div>
 </body>
 </html>
