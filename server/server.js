@@ -94,16 +94,16 @@ app.post('/guesses', (req, res) => {
   res.sendStatus(201);
 })
 app.get('/history1', (req, res) => {
-  res.send(player1Array);
+  res.send(player1Array.join(`, `));
 })
 app.get('/history2', (req, res) => {
-  res.send(player2Array);
+  res.send(player2Array.join(`, `));
 })
 app.get('/history3', (req, res) => {
-  res.send(player3Array);
+  res.send(player3Array.join(`, `));
 })
 app.get('/history4', (req, res) => {
-  res.send(player4Array);
+  res.send(player4Array.join(`, `));
 })
 app.listen(PORT, () => {
   console.log ('Server is running on port', PORT)

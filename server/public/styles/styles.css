@@ -12,3 +12,7 @@ table, thead, tr, td, th, .history {
     display: inline-block;
     margin: 0;
 }
+
+td {
+    text-align: center;
+}
